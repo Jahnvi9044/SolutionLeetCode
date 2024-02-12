@@ -1,47 +1,76 @@
 class Solution {
     public int[] nextGreaterElements(int[] nums) {
-int n=nums.length;
-    // Stack<Integer> s=new Stack<>();
+    int n=nums.length;
+    Stack<Integer> s=new Stack<>();
     int[] ans=new int[n];
-    int fg;  
-    for(int i=n-1;i>=0;i--)
-    {  fg=0;
-       for(int j=i+1;j<n;j++)
-       {
-           if(nums[i]<nums[j])
-            {
-                ans[i]=nums[j];
-                fg=1;
-                break;
-            }
-       }
+    
 
-    //    System.out.println("fg:"+fg);
-         if(fg==0)
-         {
-             for(int k=0;k<n-(n-i);k++)
-             {
-                 if(nums[i]<nums[k])
-                 {
-                     ans[i]=nums[k];
-                     fg=1;
-                     break;
-                 }
-             }
-         }
+    //just think there are 2 arrays like this
+    for(int i=2*n-1;i>=0;i--)
+    {
+        while(!s.isEmpty() && nums[i%n]>=s.peek())
+          s.pop();
+        if(s.isEmpty())
+          ans[i%n]=-1;
+        else if(nums[i%n]<s.peek())
+          ans[i%n]=s.peek();
 
-        // System.out.println(Arrays.toString(ans));
-
-         if(fg==0)
-           ans[i]=-1;    
-
+         s.push(nums[i%n]);   
     }
 
+    return ans;
 
-return ans;
-
-        }
+    }
 }
+
+
+
+
+
+
+
+
+
+
+//     int fg;  
+//     for(int i=n-1;i>=0;i--)
+//     {  fg=0;
+//        for(int j=i+1;j<n;j++)
+//        {
+//            if(nums[i]<nums[j])
+//             {
+//                 ans[i]=nums[j];
+//                 fg=1;
+//                 break;
+//             }
+//        }
+
+//     //    System.out.println("fg:"+fg);
+//          if(fg==0)
+//          {
+//              for(int k=0;k<n-(n-i);k++)
+//              {
+//                  if(nums[i]<nums[k])
+//                  {
+//                      ans[i]=nums[k];
+//                      fg=1;
+//                      break;
+//                  }
+//              }
+//          }
+
+//         // System.out.println(Arrays.toString(ans));
+
+//          if(fg==0)
+//            ans[i]=-1;    
+
+//     }
+
+
+// return ans;
+
+//         }
+// }
          
        
 // //            Output: [2,-1,2]
