@@ -1,24 +1,21 @@
 class Solution {
 
-    int[] NGR;
+    HashMap<Integer,Integer> map=new HashMap<>();
     public int[] nextGreaterElement(int[] nums1, int[] nums2) {
      
      int n1=nums1.length;
      int n2=nums2.length;
      
-     NGR=new int[n2];
+    
      NGR(nums2);
       int[] ans=new int[n1];
      for(int i=0;i<n1;i++)
      {
-         for(int j=0;j<n2;j++)
-         {  if(nums1[i]==nums2[j])
+          if(map.containsKey(nums1[i]))
               {
-                  ans[i]=NGR[j];
-                  break;
+                  ans[i]= map.get(nums1[i]);
+                 
               }
-         }
-
         
      }
 
@@ -35,8 +32,9 @@ class Solution {
             while(!s.isEmpty() && s.peek()<=nums[i] )
               s.pop();
             if(s.isEmpty())
-              NGR[i]=-1;
-            else NGR[i]=s.peek();
+              map.put(nums[i],-1);
+            else 
+              map.put(nums[i],s.peek());
             s.push(nums[i]);    
         }
     }
