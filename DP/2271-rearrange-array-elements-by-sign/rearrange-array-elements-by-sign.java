@@ -12,23 +12,16 @@ class Solution {
               neg.add(nums[i]); 
         } 
 
-        System.out.println(pos);
-        System.out.println(neg);
+       
+    
+      for(int i=0;i<n;i+=2)
+      { 
+          nums[i]=pos.get(i/2);
+          nums[i+1]=neg.get(i/2);
 
-        Iterator it =pos.iterator();
-        Iterator it1 =neg.iterator();
+          
+      }
         
-        int i=0;
-        while ( it.hasNext()) {
-                nums[i] = (Integer)it.next();
-                i+=2;
-            } 
-       i=1;
-        while (it1.hasNext())  
-        {   
-                nums[i] = (Integer)it1.next();
-                i+=2;
-        }
         
         return nums;
     }
