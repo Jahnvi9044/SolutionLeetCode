@@ -1,21 +1,23 @@
 class Solution {
     public int missingNumber(int[] nums) {
-       
-       if(nums.length==0)
-          return 0;
+       int n=nums.length;
+    //    [3,0,1]
+    //    [0,1,2]
+    //    [-1,-1,1]  
 
-         int [] dummy=new int[nums.length+1];
-         for(int i:nums)
-         {   dummy[i]++;
+    int xor=0;
+         for(int i = 0 ; i<n ; i++ )
+         {     
+            xor^=nums[i];
+            xor^=i;
+        }
+              xor^=n;
+         System.out.println(xor);
+           
 
-         }
-         for(int i=0;i<nums.length+1;i++)
-         {
-             if(dummy[i]==0)
-               return i;
+         
+            
 
-         }
-
-         return 0;
+         return xor;
     }
 }
