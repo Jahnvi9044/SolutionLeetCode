@@ -16,16 +16,16 @@ class Solution {
               score++;
           }
           
-           else 
-           {   if(score>0)
-               {
+           else if(score>0)
+            {
                  
                  power=power+tokens[j];
                  j--;
                  score--;
-               }
-               else break;
-           }  
+            }
+            
+            else break;
+           
 
            
           max=Math.max(score,max);
