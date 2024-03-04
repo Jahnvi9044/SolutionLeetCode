@@ -11,7 +11,7 @@ class Solution {
           if(tokens[i]<=power)
           {
               
-              power=power-tokens[i];
+              power-=tokens[i];
               i++;
               score++;
           }
@@ -19,19 +19,17 @@ class Solution {
            else if(score>0)
             {
                  
-                 power=power+tokens[j];
+                 power+=tokens[j];
                  j--;
                  score--;
             }
             
             else break;
-           
-
-           
+        
           max=Math.max(score,max);
       }
       
-      max=Math.max(score,max);
+     
       
       return max;
     }
