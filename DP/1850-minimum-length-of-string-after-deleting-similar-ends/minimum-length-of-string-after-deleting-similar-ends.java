@@ -22,7 +22,6 @@ class Solution {
         }
 
         if(i>j) return 0;  
-        if(i==j) return 1;
 
         return j-i+1;
      
