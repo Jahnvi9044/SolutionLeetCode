@@ -6,9 +6,6 @@ class Solution {
 
         while(i!=j && s.charAt(i)==s.charAt(j))
         {
-
-           
-
             while( i<n-1 && i<j && s.charAt(i)==s.charAt(i+1))
              i++;
             i++; 
