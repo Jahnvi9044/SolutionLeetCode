@@ -9,21 +9,26 @@
  *     }
  * }
  */
-public class Solution 
-{
-    public boolean hasCycle(ListNode head) 
-    {
-        if(head==null)
-            return false;
+public class Solution {
+    public boolean hasCycle(ListNode head) {
 
-        while(true)
-        {
-            if(head.next == null)
-                return false;
-            if(head.val == 1e6)
+        ListNode slow=head;
+        ListNode fast=head;
+
+       
+            while(fast!=null && fast.next!=null )
+            {
+               slow=slow.next;
+               fast=fast.next.next;
+
+              if(slow==fast)
                 return true;
-            head.val = (int)1e6;
-            head = head.next;
-        }
+              
+            }
+
+              return false;
+  
+
+        
     }
 }
