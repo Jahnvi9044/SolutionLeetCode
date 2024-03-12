@@ -40,23 +40,20 @@ class Solution {
                     
                 }
                 start.next=head.next;
-                head=head.next;
-
                 
               }
                else 
                {  
                 map.put(sum,head);
-                head = head.next;
 
                }  
-                 
-              
+
+                head=head.next;
+
           }
 
 
           return dummy.next;
-
 
     }
 }
