@@ -67,7 +67,16 @@ class Solution {
 
         for(int i=n-1;i>=0;i--)
         {
-           
+            if(s.isEmpty())    //
+            {
+                NSR[i]=pseudoIndex;
+            }
+            else if(s.size()>0 && height[s.peek()]<height[i])
+            {
+                NSR[i]=s.peek();
+            }
+
+            else {    //
                 while(s.size()>0 && height[s.peek()]>=height[i])
                 {
                     s.pop();
@@ -78,7 +87,7 @@ class Solution {
                     NSR[i]=pseudoIndex;
                 }
                 else NSR[i]=s.peek();
-          
+            }   //
               
               s.push(i);
 
@@ -96,7 +105,16 @@ class Solution {
 
         for(int i=0;i<n;i++)
         {
-           
+            if(s.isEmpty())     //
+            {
+                NSL[i]=pseudoIndex;
+            }
+            else if(s.size()>0 && height[s.peek()]<height[i])
+            {
+                NSL[i]=s.peek();
+            }
+
+            else {        //
                 while(s.size()>0 && height[s.peek()]>=height[i])
                 {
                     s.pop();
@@ -107,7 +125,7 @@ class Solution {
                     NSL[i]=pseudoIndex;
                 }
                 else NSL[i]=s.peek();
-            
+            }//
               
               s.push(i);
 
