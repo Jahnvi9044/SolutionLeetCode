@@ -3,16 +3,17 @@ class Solution {
         String st ="";
         int first = word.indexOf(ch);
 
-        for( int i = 0 ; i < word.length() ; i++ )
+        for( int i = 0 ; i <= first; i++ )
         {
-            if(i <= first)
-            { 
+ 
                 st = word.charAt(i) + st ;
-            }
 
-            else st = st + word.charAt(i) ;
         }
-    
+
+               if(first!=-1)
+                 st = st + word.substring(first+1,word.length());
+               else 
+                 st=word;   
        return st; 
     }
     
