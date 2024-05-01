@@ -6,7 +6,7 @@ class Solution {
         if(first==-1)
           return word;
 
-          
+
         for( int i = 0 ; i <= first ; i++ )
         {
  
@@ -16,8 +16,7 @@ class Solution {
 
                if(first!=-1)
                  st.append(word.substring(first+1,word.length()));
-               else 
-                 st.append(word);   
+               
        return st.toString(); 
     }
     
