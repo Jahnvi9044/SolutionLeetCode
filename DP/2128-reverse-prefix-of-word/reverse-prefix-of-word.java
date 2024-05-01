@@ -1,20 +1,24 @@
 class Solution {
-    public String reversePrefix(String word, char ch) {
-        String st ="";
-        int first = word.indexOf(ch);
 
-        for( int i = 0 ; i <= first; i++ )
+    public String reversePrefix( String word , char ch ) {
+        StringBuffer st =new StringBuffer("");
+        int first = word.indexOf(ch);
+        if(first==-1)
+          return word;
+
+          
+        for( int i = 0 ; i <= first ; i++ )
         {
  
-                st = word.charAt(i) + st ;
+                st.insert( 0 , word.charAt(i) +"") ;
 
         }
 
                if(first!=-1)
-                 st = st + word.substring(first+1,word.length());
+                 st.append(word.substring(first+1,word.length()));
                else 
-                 st=word;   
-       return st; 
+                 st.append(word);   
+       return st.toString(); 
     }
     
 }
