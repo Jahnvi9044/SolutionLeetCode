@@ -1,21 +1,25 @@
 class Solution {
     public int subsetXORSum(int[] nums) {
         
-        int xor=0,sum=0;
-        for(int i=0;i< 1<<nums.length ;i++)
-        {
-            for(int j=0; j<nums.length ; j++)
-            {   if((i&(1<<j))!=0)
-               {
-                   xor=xor^nums[j];
-               }
-            }
-              sum+=xor;
-              xor=0;
-        }
-         
-        // System.out.println(sum);
+    
 
-        return sum;
+     return subsetSum(0,nums,0);
+
+
     }
+
+
+
+
+    private int subsetSum(int i, int [] nums, int xor)
+    {
+        if(i==nums.length)
+          return xor;
+
+
+        int sum1=subsetSum(i+1,nums,xor);      
+        int sum2=subsetSum(i+1,nums,xor^nums[i]);
+
+        return sum1+sum2;      
+    }   
 }
