@@ -2,13 +2,9 @@ class Solution {
     public int appendCharacters(String s, String t) {
 
 
-        // coaching 
-        //        i 
-        // coding 
-        //   j
-
+    int sl=s.length(),tl=t.length();
        int i=0,j=0;
-       while(i<s.length() && j<t.length())
+       while(i<sl && j<tl)
     {   
         
         
@@ -26,7 +22,7 @@ class Solution {
 
     }
 
-          return t.length()-j;
+          return tl-j;
 
  }
 }
