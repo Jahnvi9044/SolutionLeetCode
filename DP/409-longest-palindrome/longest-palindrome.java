@@ -1,47 +1,39 @@
 class Solution {
     public int longestPalindrome(String s) {
 
-       int[] freq=new int[60];
+       int[] freq=new int[58];
     
        char[] ch =s.toCharArray();
 
        for(char i: ch)
       {  
-    
-       
-
         freq[(int)i-65]++;
-    
       }
-      int k = 0 ;
-       int sum=0 , odd_max=0;
-      for(int i=0;i<60;i++)
+     
+       int sum=0 ;
+       boolean fg=false;
+      for(int i=0;i<58;i++)
       { 
         if(freq[i]%2==0)
             sum+=freq[i];
+        else
+        {
+               sum+=(freq[i]-1);
+               fg=true;
+        }    
         
-        else 
-        {          
-            if(odd_max<freq[i])
-            {  odd_max = freq[i];
-                 k = i;
-            }
-        }
       }
       
-     
 
-       for(int i=0;i<60;i++)
-      { 
-        if(freq[i]%2!=0 && i!=k)
-            sum+=(freq[i]-1);
+     
         
-      }
+     if(fg==true)
+         sum+=1;
 
     //    System.out.println(Arrays.toString(freq));
  
 
-      sum+=odd_max;
+    
     
 
     return sum;
