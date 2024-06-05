@@ -16,19 +16,19 @@ class Solution {
                for(int  i = 1 ;i<words.length;i++){
                     
                      List<String> newLis = new ArrayList<>();   
-                    for(int j = 0;j<words[i].length();j++)
-                    {    
-                        char k = words[i].charAt(j);
-
-                        if(list.contains(k+""))
+                     char[] ch1 = words[i].toCharArray();
+                        for( char c : ch1)   
+                     {  
+                        if(list.contains(c+""))
                            {
-                             newLis.add(k+"");
-                             list.remove(k+"");
+                             newLis.add(c+"");
+                             list.remove(c+"");
                            }
                     }
            
            list  = newLis;
-                   
+          
+
                }  
 
                return list ; 
