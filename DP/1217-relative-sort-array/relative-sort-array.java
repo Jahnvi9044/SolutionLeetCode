@@ -9,7 +9,7 @@ class Solution {
          {
             freq[i] = -1;
          }
-         int l = 0;
+   
         for(int i = 0 ; i<n ; i++ )
         {    
 
@@ -35,16 +35,13 @@ class Solution {
         
            for(int i = 0; i<1001;i++)
            {
-            if(freq[i]!=-1)
-            {
-            int k = freq[i];
-            int m = i;
-            for( int j = -1 ; j<k ; j++ )
+        
+            for( int j = -1 ; j<freq[i] ; j++ )
             {   
-                ans[c] = m ;
-                c++;
+                ans[c++] = i ;
+                
             }
-            }
+            
            }
          
          
