@@ -2,43 +2,48 @@ class Solution {
     public int[] relativeSortArray(int[] arr1, int[] arr2) {
 
 
-        TreeMap<Integer,Integer> map = new TreeMap<>();
+      int[] freq = new int[1001];
         
          int  n = arr1.length ; 
+         for(int i = 0 ;i<1001;i++)
+         {
+            freq[i] = -1;
+         }
+         int l = 0;
+        for(int i = 0 ; i<n ; i++ )
+        {    
 
-        for(int i = 0;i<n;i++)
-        {
-            map.put(arr1[i],map.getOrDefault(arr1[i],0)+1) ; 
+              freq[arr1[i]]++;
             
         }
         // System.out.println(map);
          int c=0;
-         int [] ans= new int[arr1.length];
-         for(int i = 0; i<arr2.length;i++)
+         int [] ans= new int[n];
+         for(int i = 0; i< arr2.length ;i++)
          {
-            int  k = map.get(arr2[i]);
+            int  k = freq[arr2[i]];
 
-            for(int j = 0 ; j<k ; j++)
+            for(int j = -1 ; j<k ; j++)
             {
-                ans[c] = arr2[i];
-                 
-                c++;
+                ans[c++] = arr2[i];
+            
             }
-            map.remove(arr2[i]);
+            freq[arr2[i]]=-1;
             
          } 
         //   System.out.println(Arrays.toString(ans));
-          Iterator<Map.Entry<Integer,Integer>> it = map.entrySet().iterator();
-         int i = c ; 
-           while(it.hasNext())
+        
+           for(int i = 0; i<1001;i++)
            {
-            Map.Entry<Integer,Integer> a =it.next();
-            int k = a.getValue();
-            int m = a.getKey();
-            for(int j = 0;j<k ;j++)
+            if(freq[i]!=-1)
+            {
+            int k = freq[i];
+            int m = i;
+            for( int j = -1 ; j<k ; j++ )
             {   
                 ans[c] = m ;
                 c++;
+            }
             }
            }
          
