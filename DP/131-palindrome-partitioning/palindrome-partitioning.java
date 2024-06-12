@@ -1,25 +1,25 @@
 class Solution {
     public List<List<String>> partition(String s) {
         List<List<String>> ans=new ArrayList<>();
-       func(s,s.length(),0,ans,new ArrayList<>());
+       func(s,ans,new ArrayList<>());
         return ans;
     }
 
 
-    public void  func( String s,int n, int ind , List<List<String>> res, ArrayList<String> arr )
+    public void  func( String s, List<List<String>> res, ArrayList<String> arr )
     { 
-        if(ind>=n)
+        if(s=="")
         {  res.add(new ArrayList<>(arr));
             return ;
         } 
        
-
-         for(int i=ind;i<n;i++)
+            int i = 0 ; 
+         for(int j=0;j<s.length();j++)
          {
-             if(isPalin(s,ind, i))
+             if(isPalin(s.substring(i,j+1)))
              {
-                 arr.add(s.substring(ind,i+1));
-                 func(s,n,i+1,res,arr);
+                 arr.add(s.substring(i,j+1));
+                 func(s.substring(j+1),res,arr);
                  arr.remove(arr.size()-1);
              }
          }
@@ -27,9 +27,11 @@ class Solution {
 
 
 
-    public boolean isPalin(String st,int i,int j)
-    {
-        while(i<=j)
+    public boolean isPalin(String st)
+    {   
+        int i = 0;
+        int j = st.length()-1;
+        while(i<j)
         {
             if(st.charAt(i)!=st.charAt(j))
              { return false;}
