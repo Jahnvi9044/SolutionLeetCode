@@ -9,9 +9,9 @@ class Solution {
         this.c = c;
     }
 
-    String print(){
-        return this.p+":"+this.c+" ";
-    }
+    // String print(){
+    //     return this.p+":"+this.c+" ";
+    // }
    } 
 
 
@@ -28,8 +28,8 @@ class Solution {
 
         Arrays.sort(projects,(o1,o2)->o1.c-o2.c);
  
-      for(int i = 0;i<n;i++)
-        System.out.print(projects[i].print()+",");
+    //   for(int i = 0;i<n;i++)
+        // System.out.print(projects[i].print()+",");
 
           int i = 0;
        for(int j = 0;j<k;j++)
