@@ -2,13 +2,12 @@ class Solution {
     public int passThePillow(int n, int time) {
 
 
-         int div = n - 1;
-         int afterDivide = time/div;
-         int off = div * afterDivide ;
+       int fullround = time/(n-1);
+       int left = time % (n-1);
 
-          if(afterDivide % 2 == 0)
-          return 1 + (time-off);
-          else return n-(time-off); 
-
+       if( fullround % 2 == 0 )//-->
+         return left+1;
+       else //<--
+         return n - left ;   
     }
 }
