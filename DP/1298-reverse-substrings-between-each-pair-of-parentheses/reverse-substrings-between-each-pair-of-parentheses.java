@@ -10,15 +10,13 @@ class Solution {
            while(s.length() > i)
            {
                
-            //    System.out.println(s.charAt(i));
-            try{
+    
             while( s.charAt(i) != ')' )
             {
                 stack.push(s.charAt(i));
                 i++;
             }
           
-            // System.out.println(stack);
 
             if(s.charAt(i)==')')
             {   
@@ -30,7 +28,7 @@ class Solution {
                      newSt = newSt + stack.pop(); 
 
                  }
-                //  System.out.println(newSt);
+    
                  sol = newSt;
                  
                     stack.pop();
@@ -44,11 +42,7 @@ class Solution {
                  }  
             }
 
-               }
-            catch(StringIndexOutOfBoundsException e )
-            {   
-                System.out.println("Error"+i+" "+s.length());
-            }
+            
            }
 
 
