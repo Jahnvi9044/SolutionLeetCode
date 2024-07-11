@@ -1,52 +1,41 @@
 class Solution {
     public String reverseParentheses(String s) {
-    
-          s="(("+s+"))";
 
-           Stack<Character> stack = new Stack<>() ; 
+           Stack<StringBuffer> stack = new Stack<>() ; 
+           StringBuffer str = new StringBuffer() ; 
+           int i = 0 ;
+    
            
-           int i = 0;
-           String sol = "",newSt="";
-           while(s.length() > i)
-           {
-               
-    
-            while( s.charAt(i) != ')' )
-            {
-                stack.push(s.charAt(i));
-                i++;
-            }
-          
+           for( i= 0 ; i<s.length() ; i++ )
+           { 
 
-            if(s.charAt(i)==')')
+            char ch = s.charAt(i);
+            
+            if( ch =='(')
             {   
-                
-                i++;
-                 newSt="";
-                while( stack.peek()!='(')
-                 {
-                     newSt = newSt + stack.pop(); 
+                 stack.push( str );
+                 str = new StringBuffer() ; 
 
-                 }
-    
-                 sol = newSt;
-                 
-                    stack.pop();
-                 if(!stack.isEmpty())
-                 {   
-                        for(int j = 0; j<newSt.length() ; j++)
-                        {
-                            stack.push(newSt.charAt(j));
-                        }
-                        
-                 }  
             }
+             
+            else if( ch ==')')
+            {   
+                    str.reverse();
+                    if(!stack.isEmpty())
+                    {
+                        stack.peek().append(str);
+                        str = stack.pop();
+                    }
+            }
+
+            else 
+              str.append(ch);
 
             
            }
 
 
-           return sol;
+           return str.toString();
 
     }
 }
