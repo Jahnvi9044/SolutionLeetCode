@@ -22,9 +22,9 @@ class Solution {
         }
       }
 
-      System.out.println( count_orange);
+    //   System.out.println( count_orange);
 
-      System.out.println(pending.size());
+    //   System.out.println(pending.size());
   
        
        int count_rottenOrange = 0 , rot_time = 0;
@@ -62,8 +62,8 @@ class Solution {
          }
 
       }
-      
-      System.out.println( count_orange+" "+count_rottenOrange);
+    //   
+    //   System.out.println( count_orange+" "+count_rottenOrange);
 
       if( count_orange == count_rottenOrange)
          return rot_time;
