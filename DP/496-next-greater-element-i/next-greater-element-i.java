@@ -29,7 +29,7 @@ class Solution {
 
      }
 
-     System.out.print(Arrays.toString(freq));
+    //  System.out.print(Arrays.toString(freq));
     
 
     int [] ans = new int[nums1.length];
