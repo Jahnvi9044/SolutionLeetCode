@@ -5,20 +5,20 @@ class Solution {
       int n = nums.length;
       for(int i = n-1 ; i>=0 ; i--)
       {  
-        System.out.println(nums[i]);
+        // System.out.println(nums[i]);
         while(!s.isEmpty() && s.peek()<=nums[i])
           s.pop();
         s.push(nums[i]);
           
           
       }
-      System.out.println(s);
+    //   System.out.println(s);
        int [] ans =  new int[nums.length];
 
         for(int i = n-1 ; i>=0 ; i--)
       {
 
-        System.out.println(nums[i]);
+        // System.out.println(nums[i]);
         while(!s.isEmpty() && s.peek()<=nums[i])
           s.pop();
 
