@@ -1,35 +1,35 @@
 class Solution {
     public long appealSum(String s) {
 
-        HashMap<Character,List<Long>> map = new HashMap<>();
+        HashMap<Character,List<Integer>> map = new HashMap<>();
         long  n = s.length(); 
         for( int i = 0 ; i<s.length() ; i++)
         {
            if(!map.containsKey(s.charAt(i)))
            {
               map.put(s.charAt(i),new ArrayList<>());
-              map.get(s.charAt(i)).add(-1l);
+              map.get(s.charAt(i)).add(-1);
              
            }
          
-           map.get(s.charAt(i)).add((long)i);
+           map.get(s.charAt(i)).add(i);
           
         }
       
-        for(List<Long> e :map.values()  )
+        for(List<Integer> e :map.values()  )
         {
-           e.add(n);
+           e.add(s.length());
         }
          
           long no = n*(n+1)/2;
           long sum = 0l ;
          
-         for (Map.Entry<Character, List<Long>> entry : map.entrySet())
+         for (Map.Entry<Character, List<Integer>> entry : map.entrySet())
          {
 
             long sub = 0l;
             long contri= 0l ;
-            List<Long> list = entry.getValue();
+            List<Integer> list = entry.getValue();
             for(int i = 0;i<list.size()-1;i++)
             {
 
