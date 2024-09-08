@@ -3,16 +3,17 @@
  * @return {Function}
  */
 var once = function(fn) {
-    var calls;
-    return function(...args){   
-      
-       if(!calls)
-        { var res = fn(...args);
-          calls=1;
-            return res;
+    let count = 0 ; 
+    return function(...args){
+        if(count==0)
+        {
+           let ans = fn(...args);
+           console.log(args);
+           count++;
+           return ans ;
         }
-        else return undefined;   
-           } 
+        else return undefined;
+    }
 };
 
 /**
