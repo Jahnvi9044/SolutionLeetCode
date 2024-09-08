@@ -5,15 +5,16 @@
  */
 var filter = function(arr, fn) {
 
+ let filtered = [] ; 
+ 
+ arr.forEach((item, ind, arr)=>{
+    if(fn(item,ind))
+    {
+      filtered.push(item);
+    }
+ });
 
-            var filtered=[];
-              var k=0;
-            for(let i = 0;i<arr.length ; i++)
-            {     
-                if(fn(arr[i],i))
-                  filtered[k++]=arr[i];
-            }
-                 
-                 return filtered;
-    
+ return filtered ; 
+
+
 };
