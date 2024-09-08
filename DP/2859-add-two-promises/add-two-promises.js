@@ -10,14 +10,17 @@ var addTwoPromises = async function(promise1, promise2) {
    ans += await promise1;
    ans += await promise2;
    console.log(ans );
-   
-   const pr = new Promise((response, reject)=>{
+
+//    const pr = new Promise((response, reject)=>{
   
-    response(ans ) 
+//     response(ans ) 
 
-  }); 
+// async function always returns a promise
 
-   return pr ;   
+    return ans ;
+
+
+   
 };
 
 
