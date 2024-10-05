@@ -24,7 +24,7 @@ class Solution {
      {
 
 
-        if(chkEquals(freq2,freq))//O(n) time 
+        if(chkEquals())//O(n) time 
          {
            
               return true;
@@ -36,7 +36,7 @@ class Solution {
        
            
      }       
-         if(chkEquals(freq2,freq)) // checking for the last time , in the ablove loop the last slide is unchecked 
+         if(chkEquals()) // checking for the last time , in the ablove loop the last slide is unchecked 
          {
            
               return true;
@@ -44,7 +44,7 @@ class Solution {
      return false ;    
     }
 
-    public boolean chkEquals(int[] freq, int[] freq2){
+    public boolean chkEquals(){
 
         for(int i = 0;i<26;i++)
         {
