@@ -1,4 +1,7 @@
 class Solution {
+    
+     int [] freq = new int[26];
+     int[] freq2 = new int[26];
     public boolean checkInclusion(String s1, String s2) {
     
 
@@ -8,8 +11,6 @@ class Solution {
       if(n1>n2)
         return false; 
 
-     int [] freq = new int[26];
-     int[] freq2 = new int[26];
 
     
      for(int i = 0; i<s1.length() ; i++)
