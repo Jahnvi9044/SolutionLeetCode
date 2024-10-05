@@ -7,39 +7,51 @@ class Solution {
 
       if(n1>n2)
         return false; 
-     Map<Character,Integer> map1 = new HashMap<>();
-     Map<Character,Integer> map2 = new HashMap<>();
 
+     int [] freq = new int[26];
+     int[] freq2 = new int[26];
+
+    
      for(int i = 0; i<s1.length() ; i++)
      {
-        map1.put(s1.charAt(i),map1.getOrDefault(s1.charAt(i),0)+1);
-        map2.put(s2.charAt(i),map2.getOrDefault(s2.charAt(i),0)+1);
- 
+        freq[s1.charAt(i)-'a']++;
+        freq2[s2.charAt(i)-'a']++;
+
      }
 
      for(int i = n1 ; i<n2 ; i++)
      {
 
 
-        if(map1.equals(map2))//O(n) time 
+        if(chkEquals(freq2,freq))//O(n) time 
          {
            
               return true;
          }
-         
-         map2.put(s2.charAt(i),map2.getOrDefault(s2.charAt(i),0)+1);
-         map2.put(s2.charAt(i-n1),map2.getOrDefault(s2.charAt(i-n1),0)-1);
-             
-         if(map2.get(s2.charAt(i-n1))==0)
-           map2.remove(s2.charAt(i-n1));  
+          
+          freq2[s2.charAt(i)-'a']++; 
+          freq2[s2.charAt(i-n1)-'a']--; 
+          
+       
            
      }       
-         if(map1.equals(map2)) // checking for the last time , in the ablove loop the last slide is unchecked 
+         if(chkEquals(freq2,freq)) // checking for the last time , in the ablove loop the last slide is unchecked 
          {
            
               return true;
          }
      return false ;    
+    }
+
+    public boolean chkEquals(int[] freq, int[] freq2){
+
+        for(int i = 0;i<26;i++)
+        {
+            if(freq[i]!=freq2[i])
+              return false ;
+        }
+         return true;
+
     }
 }
 
