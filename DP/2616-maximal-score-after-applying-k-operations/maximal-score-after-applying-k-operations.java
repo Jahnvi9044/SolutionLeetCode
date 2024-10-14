@@ -8,7 +8,7 @@ class Solution {
         for(int i: nums)  
           pq.add(i);
 
-          System.out.println(pq);
+        
          long ans = 0 ;
         for(int i = 0;i<k;i++ )
         {
