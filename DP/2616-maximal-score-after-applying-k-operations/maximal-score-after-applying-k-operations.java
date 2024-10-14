@@ -12,9 +12,9 @@ class Solution {
          long ans = 0 ;
         for(int i = 0;i<k;i++ )
         {
-            double d = (double)pq.poll();
+            int d = pq.poll();
             ans+=d;
-            pq.add((int)Math.ceil(d/3));
+            pq.add((int)((d+2)/3));
         } 
       return ans ; 
     }
