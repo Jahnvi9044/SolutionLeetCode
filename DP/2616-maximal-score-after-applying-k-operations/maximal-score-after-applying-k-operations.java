@@ -3,7 +3,7 @@ class Solution {
         
 
         // PriorityQueue<Integer> pq = new PrioritytQueue<>(Collections.reverseOrder());
-        PriorityQueue<Integer> pq = new PriorityQueue<Integer>(Collections.reverseOrder());
+        PriorityQueue<Integer> pq = new PriorityQueue<Integer>((a,b)->(b-a));
            
         for(int i: nums)  
           pq.add(i);
