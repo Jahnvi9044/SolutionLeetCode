@@ -7,7 +7,7 @@ class Solution {
        {
         set.add((long)i);
        }
-       System.out.println(Arrays.toString(nums));
+       
          int count = 1;
        long square  = 0 ;
        int n = nums.length;
@@ -17,7 +17,7 @@ class Solution {
        {   
         square = (long)nums[i]*nums[i];
         for(int j = 0;j<4;j++)
-        { System.out.println(count+" "+square);
+        { 
           if(set.contains((Long)square))
           {  
               set.remove(square);
