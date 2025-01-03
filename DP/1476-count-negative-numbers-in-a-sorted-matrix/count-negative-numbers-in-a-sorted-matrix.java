@@ -20,7 +20,7 @@ class Solution {
          if(ans!=-1)  
           count += n-ans;
 
-          System.out.println(count+" "+ans);
+          
          
      }
        return count;
