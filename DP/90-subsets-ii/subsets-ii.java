@@ -14,22 +14,18 @@ class Solution {
 
     public void SubsetWithDuplicate(int [] nums , int i , int n, ArrayList<Integer> arr ,List<List<Integer>> ans )
     {
-         if(i==n)
+        ans.addFirst(new ArrayList<Integer>(arr)); 
+         for(int j = i ;j<n ;j++)
          {
-            if(!ans.contains(arr))
-            {
-                ans.addFirst(new ArrayList<Integer>(arr));
-            }
-            return ;
+            if(i!=j && nums[j]==nums[j-1])
+              continue ; 
+            arr.add(nums[j]);
+            SubsetWithDuplicate(nums,j+1,n,arr,ans);   
+            arr.remove(arr.size()-1);
+          
          }
-         
-         //take
-         arr.add(nums[i]);
-         SubsetWithDuplicate(nums,i+1,n,arr,ans);   
- 
-         //not take
-         arr.remove(arr.size()-1);
-         SubsetWithDuplicate(nums,i+1,n,arr,ans);
+
+        
          return ;
     }
 }
