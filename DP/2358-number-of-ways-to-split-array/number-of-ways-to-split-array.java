@@ -11,13 +11,13 @@ class Solution {
            pre[n-i-1] = sum ;
         }
          sum=0;
-         System.out.println(Arrays.toString(pre));
+        //  System.out.println(Arrays.toString(pre));
        int count =0 ; 
        for(int i = 0 ;i<n-1 ;i++)
        {
            sum += nums[i] ; 
               
-           System.out.println(sum+" "+pre[i+1]);
+        //    System.out.println(sum+" "+pre[i+1]);
            if(sum>=pre[i+1])
            {
              count++;
