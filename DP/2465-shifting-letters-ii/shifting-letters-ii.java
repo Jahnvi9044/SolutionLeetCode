@@ -4,7 +4,7 @@ class Solution {
         int n  = s.length() ; 
         int m = shifts.length;  
         
-        StringBuffer stb = new StringBuffer(s);
+        
           
           int [] arr = new int[n];
         for( int i = 0 ; i<m ; i++ )
