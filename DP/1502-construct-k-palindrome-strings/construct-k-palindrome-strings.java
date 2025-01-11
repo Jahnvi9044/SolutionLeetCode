@@ -5,7 +5,7 @@ class Solution {
       int n = s.length();
        if(n<k) return false ;
        if(n==k) return true;
-
+      
       int odd = 0,count=0 ;
       for(int i = 0 ; i<n ; i++)
       {   
@@ -13,6 +13,7 @@ class Solution {
             odd ^= 1 << (ch - 'a');
       }
       
+       System.out.println((int)('l'-'a'));
        
        if(Integer.bitCount(odd)>k)
          return false;
