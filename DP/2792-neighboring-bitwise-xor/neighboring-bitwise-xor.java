@@ -8,11 +8,10 @@ class Solution {
 
        for(int i : derived)
        {
-        if(i == 1 )
-        {
-            countone++;
-        }
+        
+            countone^=i;
+        
        }
-       return countone%2==0 ;  
+       return countone!=1 ;  
     }
 }
