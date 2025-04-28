@@ -1,18 +1,28 @@
 class Solution {
     public int mySqrt(int x) {
-      int ans = 0;
-     
-      for(int i=0 ; i<=x ; i++)
-        {  
+    
+    int ans = 0;
 
-            if((long)i*i <= x )
-              ans = i ;
-            
-            else break;
- 
+    int low = 0, high = x,mid=0;
+    while(low<=high)
+    {   
+        mid = low+(high-low)/2;
+        
+        if( (long)mid*mid<=x )
+        { 
+            ans = mid;
+            low = mid+1; 
+        }
+        else 
+        {
+            high = mid-1;
         }
 
-        return ans ;
-        
+    } 
+
+    return ans ;
+       
+    
+    
     }
 }
