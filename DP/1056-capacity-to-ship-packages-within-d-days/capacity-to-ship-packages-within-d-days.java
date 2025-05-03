@@ -17,7 +17,7 @@ class Solution {
         if(find_tf(mid,weights,days))
         {
             high = mid-1;
-            System.out.println(mid);
+          
         }
         else low = mid+1;
        }
