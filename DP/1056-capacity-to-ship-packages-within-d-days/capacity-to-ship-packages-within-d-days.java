@@ -9,11 +9,11 @@ class Solution {
          max = Math.max(max,i);
        }
        int low = max,high = sum,mid ;
-     System.out.println(find_tf(15,weights,days));
+    
        while(low<=high)
        { 
         mid = low + (high-low)/2;
-          System.out.println(low+" "+high);
+          
         if(find_tf(mid,weights,days))
         {
             high = mid-1;
@@ -53,7 +53,7 @@ class Solution {
         {
             count++;
         }
-        System.out.println("count="+count);
+       
         return days>=count;
     }
 }
